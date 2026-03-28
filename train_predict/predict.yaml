@@ -1,0 +1,25 @@
+# config.yaml
+device:
+  cuda_device: 6
+
+data:
+  # 
+  nt: 251
+  nx: 801
+  ni: 501
+  # 
+  seis_path: "../out/seis/seis.dat"
+  init_path: "../out/seis/initial_model.dat"
+  # 
+  normalize: True
+  well_txt_dir: "../out/well"  
+  denorm_imp: true                          
+  well_imp_col: -1                          
+  well_skip_header: true                    
+  well_drop_zero: true                      
+
+model:
+  model_path: "log_cnooc/msssim119_01_19_15_00_35/models/model_last.pt"
+
+output:
+  output_path: "out2/smallmsssim_1_05_0.dat"

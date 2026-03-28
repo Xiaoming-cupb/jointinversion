@@ -1,0 +1,36 @@
+
+name: "msssim119"
+epochs: 80
+batch_size: 8
+device: "cuda"
+# pretrained: "log_mxz/msssim105_10_10_19_11_34/models/model_last.pt"
+pretrained: ""  
+
+# ====================== Weight ======================
+alpha0: 1.0    # well weight
+alpha1: 0.5    # forward weight
+alpha2: 0.05   # frequency weight
+
+
+
+
+recons_type: "msssim"  # option: mse, cross, msssim
+rickerf: 45            # domin frequency of wavelet
+
+# ====================== data path ======================
+root_dir: "../out/seis/train/"
+train_split: "trainimp"
+valid_split: "validimp"
+test_seis_path: "../out/seis/train/validimp/sx/125-833.dat"
+test_imp_path: "../out/seis/train/validimp/ws/125-833.dat"
+test_log_path: "../out/seis/train/validimp/wx/125-833.dat"
+ref_spectrum_path: "ref_spec.npy"  # frequency information from wells
+
+
+h_dim: 251               # time sample numbers of seismic profile 
+
+
+
+log_root: "log_cnooc"       # log saving path
+save_model_interval: 10   # interval of saving models（epoch）
+log_image_dpi: 300        # figure DPI
