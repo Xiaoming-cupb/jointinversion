@@ -1,31 +1,34 @@
 # JointINV
 
-JointINV is a deep-learning workflow for seismic impedance inversion using well-log constraints, forward-model consistency, and frequency-domain regularization.
-It provides a complete pipeline from well–seismic preprocessing to 2D line construction, model training, and full-volume prediction.
+JointINV is a deep-learning workflow for seismic impedance inversion using **well-log constraints**, **forward-model consistency**, and **frequency-domain regularization**.  
+It provides a complete pipeline from **well–seismic preprocessing** to **2D line construction**, **model training**, and **full-volume prediction**.
 
-**Repository Structure**
+---
 
+## Repository Structure
+
+```text
 JointINV/
-├── build2Dlines/ # Build 2D training/validation samples from 3D volumes
-├── preprocessdata/ # Preprocess seismic, model, and well data
-├── train_predict/ # Network training and full-volume prediction
+├── build2Dlines/        # Build 2D training/validation samples from 3D volumes
+├── preprocessdata/      # Preprocess seismic, model, and well data
+├── train_predict/       # Network training and full-volume prediction
 └── README.md
 
 A recommended detailed structure is:
 
 JointINV/
 ├── preprocessdata/
-│ └── pre_seis_and_wells.py
+│   └── pre_seis_and_wells.py
 ├── build2Dlines/
-│ └── train_data2d.py
+│   └── train_data2d.py
 ├── train_predict/
-│ ├── train.py
-│ ├── train_config.yaml
-│ ├── predict_with_denorm_from_wells.py
-│ ├── predict.yaml
-│ ├── net_torch.py
-│ ├── imploss.py
-│ └── torchfilters.py
+│   ├── train.py
+│   ├── train_config.yaml
+│   ├── predict_with_denorm_from_wells.py
+│   ├── predict.yaml
+│   ├── net_torch.py
+│   ├── imploss.py
+│   └── torchfilters.py
 └── README.md
 
 **Workflow**
@@ -52,12 +55,12 @@ Typical outputs:
 out/
 ├── metadata.json
 ├── seis/
-│ ├── seis.dat
-│ └── model.dat
+│   ├── seis.dat
+│   └── model.dat
 └── well/
-├── Well_1.txt
-├── Well_2.txt
-└── ...
+    ├── Well_1.txt
+    ├── Well_2.txt
+    └── ...
 
 **2. Build 2D lines**
 
@@ -75,13 +78,13 @@ Typical output structure:
 
 out/seis/train/
 ├── trainimp/
-│ ├── sx/
-│ ├── ws/
-│ └── wx/
+│   ├── sx/
+│   ├── ws/
+│   └── wx/
 └── validimp/
-├── sx/
-├── ws/
-└── wx/
+    ├── sx/
+    ├── ws/
+    └── wx/
 
 This stage supports:
 
